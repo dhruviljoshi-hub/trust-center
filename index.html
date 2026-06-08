@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Center — Applied Intuition</title>
+<style>
+@font-face {
+  font-family: 'appliedSansDisplay';
+  src: url('https://www.appliedintuition.com/_next/static/media/AppliedSansDisplay_Variable-s.p.537128d7.woff2') format('woff2');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'appliedSansText';
+  src: url('https://www.appliedintuition.com/_next/static/media/AppliedSansText_Variable-s.p.e223aec6.woff2') format('woff2');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+</style>
+
+<!-- ============================================================
+  CONTENT CONFIG — edit everything here, never touch the HTML below
+  ============================================================ -->
+<script>
+const CONFIG = {
+
+  /* ── NAV ──────────────────────────────────────────────────── */
+  nav: {
+    logo: "Applied Intuition",
+    links: ["Products", "Industries", "Customers", "About", "Join us"],
+    cta: { label: "Contact security", href: "#contact" },
+  },
+
+  /* ── HERO ─────────────────────────────────────────────────── */
+  hero: {
+    eyebrow: "Trust Center",
+    heading: "Security and Compliance",
+    body: "We build Physical AI that moves the world. Our software powers autonomous vehicles, defense systems, trucks, mining, agriculture, and construction fleets. Security and compliance are engineering disciplines at Applied, held to the same standard as the products themselves.",
+    lastUpdated: "April 7, 2026",
+  },
+
+  /* ── TABLE OF CONTENTS ────────────────────────────────────── */
+  toc: [
+    { id: "compliance",           label: "Certifications & Attestations", sub: "Audit evidence & reports" },
+    { id: "information-security", label: "Information Security",    sub: "Controls & program"          },
+    { id: "product-security",     label: "Product Security",        sub: "ISO/SAE 21434"               },
+    { id: "safety",               label: "Safety",                  sub: "ISO 26262"                   },
+    { id: "quality",              label: "Quality",                 sub: "ISO 9001"                    },
+    { id: "vuln",                 label: "Vulnerability Disclosure", sub: "Reporting & response"        },
+  ],
+
+  /* ── BADGE LIBRARY ────────────────────────────────────────── */
+  /* Each badge has either img (file path) or svg (inline SVG content) */
+  badges: {
+    soc2: {
+      label: "SOC 2 Type II",
+      sub: "Security · Common Criteria 2022",
+      img: "soc2.webp",
+    },
+    iso27001: {
+      label: "ISO/IEC 27001",
+      sub: "Information Security Management",
+      img: "iso27001.svg",
+    },
+    tisax: {
+      label: "TISAX",
+      sub: "ENX Portal · Participant ID P6HZXT",
+      svg: `
+        <rect width="104" height="104" fill="#FFFFFF" rx="2"/>
+        <rect width="104" height="32" fill="#005B9A"/>
+        <text x="52" y="14" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="1.5">ENX ASSOCIATION</text>
+        <text x="52" y="27" font-family="Inter,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="700" letter-spacing="1">TISAX</text>
+        <text x="52" y="48" font-family="Inter,sans-serif" font-size="7" fill="#005B9A" text-anchor="middle" font-weight="600" letter-spacing="0.5">ASSESSMENT LEVELS</text>
+        <text x="35" y="65" font-family="Inter,sans-serif" font-size="13" fill="#005B9A" text-anchor="middle" font-weight="700">AL2</text>
+        <line x1="52" y1="55" x2="52" y2="70" stroke="#e0e0e0" stroke-width="1"/>
+        <text x="69" y="65" font-family="Inter,sans-serif" font-size="13" fill="#005B9A" text-anchor="middle" font-weight="700">AL3</text>
+        <line x1="14" y1="75" x2="90" y2="75" stroke="#f0f0f0" stroke-width="1"/>
+        <text x="52" y="85" font-family="Inter,sans-serif" font-size="6.5" fill="#888" text-anchor="middle">Participant ID</text>
+        <text x="52" y="95" font-family="Inter,sans-serif" font-size="7.5" fill="#333" text-anchor="middle" font-weight="600" letter-spacing="0.5">P6HZXT</text>
+      `,
+    },
+    iso21434: {
+      label: "ISO/SAE 21434",
+      sub: "TÜV SÜD · Cybersecurity Engineering",
+      img: "iso21434.png",
+    },
+    iso26262: {
+      label: "ISO 26262",
+      sub: "TÜV SÜD · No. Q4B 127373 0007",
+      img: "iso26262.jpeg",
+    },
+    iso9001: {
+      label: "ISO 9001:2015",
+      sub: "TÜV SÜD · No. 951 26 6849",
+      img: "iso9001.jpeg",
+    },
+  },
+
+  /* ── SECTIONS ─────────────────────────────────────────────── */
+  sections: [
+    {
+      id: "compliance",
+      label: "Certifications & Attestations",
+      tagline: "Independently assessed across automotive and enterprise standards.",
+      body: "Audit reports and certification evidence are available to customers and prospects under NDA. Contact your account team to request access.",
+      certs: [
+        {
+          name: "TISAX",
+          issuer: "ENX Association",
+          scope: "Information Security · Assessment Levels AL2 & AL3",
+          detail: "Results verified via ENX Portal",
+          action: { label: "Verify on ENX Portal", href: "https://portal.enx.com" },
+          tisaxText: true,
+        },
+        {
+          name: "ISO/SAE 21434",
+          issuer: "TÜV SÜD Product Service GmbH",
+          scope: "Cybersecurity Engineering for Road Vehicles",
+          detail: "ISO/SAE 21434:2021",
+          img: "iso21434.png",
+        },
+        {
+          name: "ISO 26262",
+          issuer: "TÜV SÜD Product Service GmbH",
+          scope: "Functional Safety Development Process",
+          detail: "No. Q4B 127373 0007 · Valid Jan 2029",
+          img: "iso26262.jpeg",
+        },
+        {
+          name: "ISO/IEC 27001",
+          issuer: "Schellman",
+          scope: "Information Security Management System",
+          detail: "Corporate & cloud environments · Annual audit",
+          img: "iso27001.svg",
+        },
+        {
+          name: "SOC 2 Type II",
+          issuer: "AICPA",
+          scope: "Security · Availability · Confidentiality",
+          detail: "Common Criteria 2022 · Annual audit",
+          img: "soc2.webp",
+        },
+        {
+          name: "ISO 9001:2015",
+          issuer: "TÜV SÜD America Inc.",
+          scope: "Quality Management System",
+          detail: "No. 951 26 6849 · Valid Apr 2029",
+          img: "iso9001.jpeg",
+        },
+      ],
+      tiles: [],
+    },
+    {
+      id: "information-security",
+      label: "Information Security",
+      tagline: "Controls protecting customer data across the full lifecycle.",
+      body: "Our information security program is built on ISO/IEC 27001 and SOC 2 Type II frameworks. It covers access control, encryption, incident response, and business continuity across the full lifecycle of customer data. Independent auditors assess our controls annually.",
+      badgeIds: [],
+      tiles: [
+        {
+          icon: `<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>`,
+          title: "Access Control",
+          body: "Least-privilege access, multi-factor authentication, and role-based controls across all systems, with regular access reviews.",
+        },
+        {
+          icon: `<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>`,
+          title: "Encryption",
+          body: "Data is encrypted at rest and in transit using industry-standard algorithms, with defined key management and rotation practices.",
+        },
+        {
+          icon: `<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>`,
+          title: "Risk Management",
+          body: "Risks are identified, assessed, and tracked on a continuous basis. Findings feed directly into our control environment and remediation priorities.",
+        },
+        {
+          icon: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+          title: "Vulnerability & Patch Management",
+          body: "Regular scanning and time-bound remediation identify, assess, and patch vulnerabilities before they can be exploited.",
+        },
+        {
+          icon: `<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>`,
+          title: "Incident Response",
+          body: "A documented IR plan with defined escalation paths and customer notification procedures ensures incidents are contained and communicated promptly.",
+        },
+        {
+          icon: `<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>`,
+          title: "Business Continuity",
+          body: "Disaster recovery and business continuity plans are tested regularly to ensure resilience and minimize customer impact during disruptions.",
+        },
+      ],
+    },
+    {
+      id: "product-security",
+      label: "Product Security",
+      tagline: "Cybersecurity engineering built into every layer of our autonomy stack.",
+      body: "Applied Intuition's software is developed under ISO/SAE 21434:2021, the international standard for cybersecurity engineering in road vehicles. Our cybersecurity engineering process covers the full lifecycle: TARA, cybersecurity goals and concept, secure design, validation, and continual vulnerability monitoring across all deployed systems.",
+      badgeIds: [],
+      tiles: [
+        {
+          icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+          title: "TARA",
+          body: "Threat Analysis and Risk Assessment is performed for every product before development begins. Attack paths, damage scenarios, and Cybersecurity Assurance Levels (CAL) are assigned per Clause 15. Findings directly drive cybersecurity goals and requirements.",
+        },
+        {
+          icon: `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>`,
+          title: "Cybersecurity Goals & Concept",
+          body: "Cybersecurity goals derived from TARA are decomposed into verifiable engineering requirements. A cybersecurity concept defines the countermeasures allocated to each system and software component per Clauses 9 and 10.",
+        },
+        {
+          icon: `<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>`,
+          title: "Secure by Design",
+          body: "Attack surface analysis and defense-in-depth principles are applied at the architecture level. Security requirements are allocated to components before implementation, with design reviews gating each development phase.",
+        },
+        {
+          icon: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+          title: "Cybersecurity Validation & Testing",
+          body: "Test cases are derived from TARA attack paths and include fuzz testing, interface testing, and independent penetration testing. Coverage is verified against CAL level requirements per Clause 11.",
+        },
+        {
+          icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+          title: "Vulnerability Monitoring & Response",
+          body: "CVEs and security advisories are continuously monitored across all software components. Defined triage SLAs, coordinated disclosure processes, and customer notification procedures are maintained per Clause 8.",
+        },
+        {
+          icon: `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`,
+          title: "Supplier Cybersecurity Management",
+          body: "Third-party components are assessed for cybersecurity compliance before integration. Interface agreements with development partners define cybersecurity responsibilities and requirements per Clause 7 distributed development.",
+        },
+      ],
+    },
+    {
+      id: "safety",
+      label: "Safety",
+      tagline: "Safety evidence and documentation your team can use directly.",
+      body: "Applied Intuition's software is developed to ISO 26262 across ASIL B and ASIL D levels. We give customers the safety cases, verification records, and safety manuals required to integrate our components into their own safety-critical systems.",
+      badgeIds: [],
+      tiles: [
+        {
+          icon: `<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>`,
+          title: "ASIL Coverage",
+          body: "Our software elements are developed to ASIL B and ASIL D levels with documented decomposition. ASIL allocation per component is included in the safety plan provided to customers.",
+        },
+        {
+          icon: `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>`,
+          title: "Safety Cases & Evidence",
+          body: "Each product is delivered with a structured safety case, HARA outputs, and verification evidence that customers can reference directly in their own ISO 26262 submissions.",
+        },
+        {
+          icon: `<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+          title: "Safety Manual",
+          body: "Every safety-relevant product is delivered with a safety manual that defines assumptions of use, integration constraints, and required measures for the customer's environment.",
+        },
+        {
+          icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+          title: "Verification & Validation",
+          body: "SIL and HIL testing campaigns verify safety requirements under nominal and fault-injection conditions. Full test records are included in the safety evidence package.",
+        },
+        {
+          icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+          title: "Tool Qualification",
+          body: "Development tools used in safety-relevant processes are qualified per ISO 26262 Part 8. Qualification reports are available for customer review during supplier audits.",
+        },
+        {
+          icon: `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`,
+          title: "Safety Responsibility Allocation",
+          body: "We work with customers to formally document the distribution of safety responsibilities between Applied Intuition and the integrating organization, including SEooC assumptions and interface agreements.",
+        },
+      ],
+    },
+    {
+      id: "quality",
+      label: "Quality",
+      tagline: "Every release is traceable, tested, and backed by a certified quality management system.",
+      body: "Applied Intuition is certified to ISO 9001:2015. Our QMS covers the full product lifecycle from requirements through delivery and support. Customers can expect consistent release quality, clear defect handling, and full traceability from requirements to test evidence.",
+      badgeIds: [],
+      tiles: [
+        {
+          icon: `<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+          title: "Release Quality Gates",
+          body: "Every release passes defined quality gates including peer review, automated test coverage thresholds, and regression validation before it reaches customers.",
+        },
+        {
+          icon: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+          title: "Defect Management",
+          body: "Defects are triaged, root-cause analyzed, and resolved with defined SLAs. Customers are notified of issues that affect their deployment.",
+        },
+        {
+          icon: `<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>`,
+          title: "Configuration Management",
+          body: "Every software version is uniquely identified and traceable to its requirements, review records, and test results. Customers can request traceability reports for any release.",
+        },
+        {
+          icon: `<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>`,
+          title: "Corrective & Preventive Action",
+          body: "Root causes of quality escapes are documented and addressed systematically. Corrective actions are tracked to closure and verified through follow-up audits.",
+        },
+        {
+          icon: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>`,
+          title: "Supplier Quality",
+          body: "Third-party components integrated into our products are evaluated against defined quality criteria. Supplier performance is monitored on an ongoing basis.",
+        },
+        {
+          icon: `<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>`,
+          title: "Customer Satisfaction",
+          body: "Quality metrics and customer feedback are reviewed in management reviews and feed directly into product improvements and support process changes.",
+        },
+      ],
+    },
+  ],
+
+  /* ── VULNERABILITY DISCLOSURE ─────────────────────────────── */
+  vulnDisclosure: {
+    heading: "Security vulnerability disclosure",
+    paragraphs: [
+      "We work with security researchers and customers to identify and resolve vulnerabilities quickly. All reports are investigated by our Security team and handled with defined response timelines.",
+      `If you believe you've discovered a security vulnerability in our systems, please contact us at <a href="mailto:security@applied.co" class="link-accent">security@applied.co</a> with details of your findings. We appreciate your efforts to keep our platform and users safe.`,
+    ],
+  },
+
+  /* ── CONTACT CARD ─────────────────────────────────────────── */
+  contact: {
+    heading: "Contact our security team",
+    body: "For questions about our security program, compliance documentation, or to report a vulnerability, reach out directly.",
+    email: "security@applied.co",
+  },
+
+  /* ── FOOTER ───────────────────────────────────────────────── */
+  footer: {
+    copy: "© 2026 Applied Intuition, Inc. All rights reserved.",
+    tagline: "Physical AI that Moves the World™",
+    links: [],
+  },
+};
+</script>
+
+<style>
+:root {
+  --color-off-black:    #111;
+  --color-dark-gray:    #272a30;
+  --color-gray:         #5a606c;
+  --color-light-gray:   #bec2cb;
+  --color-off-white:    #ecedf4;
+  --color-white:        #fff;
+  --color-applied-blue: #006cfa;
+
+  --bg:            #ecedf4;
+  --bg-card:       #fff;
+  --bg-card-hover: #f4f5f9;
+  --fg:            #111;
+  --fg-2:          #5a606c;
+  --fg-3:          #9ca3af;
+  --border:        rgba(0,0,0,0.09);
+  --border-hover:  rgba(0,0,0,0.18);
+  --accent:        #006cfa;
+  --accent-dim:    rgba(0,108,250,0.08);
+  --green:         #16a34a;
+
+  --font-display: 'appliedSansDisplay', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-text:    'appliedSansText',    -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-text);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, .nav-logo, .hero-eyebrow, .nav-btn-primary, .contact-btn {
+  font-family: var(--font-display);
+}
+
+/* ── NAV ──────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 16px; left: 16px; right: 16px; z-index: 100;
+  height: 64px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 36px;
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.05);
+  display: flex; align-items: center;
+  padding: 0 20px 0 24px; gap: 16px;
+}
+.nav-logo {
+  font-size: 14px; font-weight: 500; color: var(--fg);
+  text-decoration: none; letter-spacing: -0.01em;
+  flex-shrink: 0; display: flex; align-items: center; gap: 9px;
+}
+.nav-logo-mark {
+  width: 22px; height: 22px; background: var(--color-off-black); border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: #fff; letter-spacing: -0.5px;
+}
+.nav-links { display: flex; gap: 0; list-style: none; flex: 1; justify-content: center; }
+.nav-links a {
+  font-size: 13px; color: var(--fg); text-decoration: none;
+  padding: 5px 12px; border-radius: 20px;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover { color: var(--color-applied-blue); }
+.nav-end { margin-left: auto; flex-shrink: 0; }
+.nav-btn-primary {
+  font-size: 13.5px; font-weight: 400; color: #fff;
+  background: var(--color-off-black); padding: 10px 20px;
+  border-radius: 100px; text-decoration: none;
+  transition: background 0.15s;
+  font-family: var(--font-display);
+}
+.nav-btn-primary:hover { background: var(--color-applied-blue); }
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+main { padding-top: 96px; }
+.page-hero { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+.page-body {
+  max-width: 1120px; margin: 0 auto; padding: 0 40px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 56px;
+  align-items: start;
+}
+.divider { height: 1px; background: var(--border); }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero { padding: 48px 0 44px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 11px; font-weight: 500; color: var(--accent);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;
+}
+.hero-eyebrow-bar { display: block; width: 18px; height: 1.5px; background: var(--accent); border-radius: 2px; }
+.hero h1 { font-size: 42px; font-weight: 500; line-height: 1.14; letter-spacing: -0.025em; margin-bottom: 20px; }
+.hero p { font-size: 16px; line-height: 1.72; color: var(--fg-2); max-width: 620px; }
+.hero-meta { margin-top: 28px; display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--fg-3); }
+
+/* ── TOC SIDEBAR ──────────────────────────────────────────── */
+.toc-sidebar {
+  position: sticky; top: 96px;
+  padding: 40px 20px 40px 0;
+  align-self: start;
+  border-right: 1px solid var(--border);
+  /* Constrain so it never taller than viewport */
+  max-height: calc(100vh - 112px);
+  overflow-y: auto;
+  /* Hide scrollbar visually */
+  scrollbar-width: none;
+}
+.toc-sidebar::-webkit-scrollbar { display: none; }
+.toc-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--fg-3); margin-bottom: 12px; padding-left: 10px;
+}
+.toc-list { list-style: none; }
+.toc-item { position: relative; }
+.toc-link {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 7px 10px; border-radius: 6px;
+  text-decoration: none; transition: background 0.15s;
+  position: relative;
+}
+.toc-link::before {
+  content: '';
+  position: absolute; right: -21px; top: 50%; transform: translateY(-50%);
+  width: 2px; height: 0; border-radius: 2px;
+  background: var(--accent);
+  transition: height 0.22s ease;
+}
+.toc-link:hover { background: rgba(0,0,0,0.035); }
+.toc-link:hover .toc-link-label { color: var(--fg); }
+.toc-link-num {
+  font-size: 9.5px; font-weight: 500; color: var(--fg-3);
+  letter-spacing: 0.04em; margin-bottom: 1px;
+  transition: color 0.15s;
+}
+.toc-link-label {
+  font-size: 12.5px; font-weight: 500; color: var(--fg-2);
+  transition: color 0.15s; line-height: 1.3;
+}
+.toc-link-sub {
+  font-size: 10.5px; color: var(--fg-3); line-height: 1.3;
+  transition: color 0.15s;
+}
+/* Active state — indicator sits on the right border line */
+.toc-item.active .toc-link::before { height: 24px; }
+.toc-item.active .toc-link-num   { color: var(--accent); }
+.toc-item.active .toc-link-label { color: var(--accent); font-weight: 600; }
+.toc-item.active .toc-link-sub   { color: var(--fg-2); }
+
+/* ── SECTIONS ─────────────────────────────────────────────── */
+.sections-container { min-width: 0; }
+.content-section {
+  padding: 40px 0 48px;
+  scroll-margin-top: 96px;
+}
+.content-section + .content-section {
+  border-top: 1px solid var(--border);
+}
+.section-header { margin-bottom: 28px; }
+.section-num {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 8px; display: block;
+}
+.section-title {
+  font-size: 24px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.2;
+}
+.section-tagline {
+  font-size: 14.5px; color: var(--fg-2); line-height: 1.6; font-weight: 400; margin-bottom: 14px;
+}
+.section-body {
+  font-size: 13.5px; color: var(--fg-2); line-height: 1.75; max-width: 600px;
+}
+
+/* ── BADGES (inline in section) ───────────────────────────── */
+.section-badges { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+.badge-item { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px; }
+.badge-frame {
+  width: 80px; height: 80px; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.badge-item:hover .badge-frame { border-color: var(--border-hover); transform: translateY(-2px); }
+.badge-frame svg { display: block; width: 100%; height: 100%; }
+.badge-frame img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.badge-label { font-size: 11px; font-weight: 500; color: var(--fg); text-align: center; line-height: 1.3; }
+.badge-sub { font-size: 10px; color: var(--fg-3); text-align: center; line-height: 1.35; margin-top: -2px; }
+
+/* ── CERT CARDS ───────────────────────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+}
+/* Center last row when only 2 cards remain */
+.cert-grid > :nth-child(3n+1):last-child,
+.cert-grid > :nth-child(3n+2):last-child {
+  grid-column: 1;
+}
+.cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px 20px;
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  text-decoration: none; color: inherit;
+}
+.cert-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+}
+.cert-mark {
+  height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.cert-mark img { max-height: 80px; max-width: 100%; object-fit: contain; }
+.cert-mark svg { max-height: 80px; max-width: 100%; }
+.cert-mark-text { flex-direction: column; gap: 8px; }
+.cert-mark-wordmark {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; letter-spacing: 0.12em;
+  color: #003B73;
+}
+.cert-mark-levels { display: flex; gap: 6px; }
+.cert-mark-levels span {
+  font-size: 11px; font-weight: 600; color: #003B73;
+  background: rgba(0,59,115,0.08);
+  border: 1px solid rgba(0,59,115,0.18);
+  border-radius: 4px; padding: 2px 8px; letter-spacing: 0.04em;
+}
+.cert-divider { height: 1px; background: var(--border); margin-bottom: 14px; }
+.cert-name {
+  font-size: 13.5px; font-weight: 600; color: var(--fg);
+  font-family: var(--font-display); margin-bottom: 3px;
+}
+.cert-issuer { font-size: 11px; color: var(--fg-3); margin-bottom: 8px; }
+.cert-scope { font-size: 12px; color: var(--fg-2); line-height: 1.5; margin-bottom: 10px; }
+.cert-detail {
+  font-size: 10.5px; color: var(--fg-3);
+  font-family: 'SF Mono','Fira Code',monospace;
+  margin-top: auto;
+}
+.cert-action {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 500; color: var(--accent);
+  text-decoration: none; margin-top: 10px;
+  transition: gap 0.15s;
+}
+.cert-action:hover { gap: 7px; }
+.cert-action svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── TISAX VERIFICATION CARD ──────────────────────────────── */
+.tisax-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid #005B9A;
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.tisax-card-left { display: flex; flex-direction: column; gap: 10px; }
+.tisax-card-top { display: flex; align-items: center; gap: 12px; }
+.tisax-card-name {
+  font-size: 13px; font-weight: 600; color: var(--fg);
+  font-family: var(--font-display);
+}
+.tisax-card-full {
+  font-size: 11.5px; color: var(--fg-3);
+}
+.tisax-levels { display: flex; gap: 6px; }
+.tisax-level {
+  font-size: 11px; font-weight: 700; color: #005B9A;
+  background: rgba(0,91,154,0.08);
+  border: 1px solid rgba(0,91,154,0.2);
+  border-radius: 4px;
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+}
+.tisax-card-meta { display: flex; gap: 28px; }
+.tisax-meta-item { display: flex; flex-direction: column; gap: 2px; }
+.tisax-meta-label { font-size: 10px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.tisax-meta-value { font-size: 12px; font-weight: 500; color: var(--fg); font-family: 'SF Mono', 'Fira Code', monospace; }
+.tisax-card-right { flex-shrink: 0; }
+.tisax-portal-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500; color: #005B9A;
+  text-decoration: none; border: 1px solid rgba(0,91,154,0.3);
+  border-radius: 100px; padding: 7px 14px;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.tisax-portal-btn:hover { background: rgba(0,91,154,0.06); border-color: #005B9A; }
+.tisax-portal-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tisax-card-note { font-size: 11px; color: var(--fg-3); margin-top: 4px; }
+
+/* ── FEATURE LIST ─────────────────────────────────────────── */
+.tiles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+.tile {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 24px 32px 24px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.tile:nth-child(even) {
+  padding-left: 32px;
+  padding-right: 0;
+  border-left: 1px solid var(--border);
+}
+.tile:hover { background: rgba(0,0,0,0.018); }
+.tile-icon {
+  flex-shrink: 0; margin-top: 2px;
+  width: 32px; height: 32px; border-radius: 8px; background: var(--accent-dim);
+  display: flex; align-items: center; justify-content: center;
+}
+.tile-icon svg { width: 15px; height: 15px; stroke: var(--accent); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.tile-body {}
+.tile h3 { font-size: 13.5px; font-weight: 500; color: var(--fg); margin-bottom: 5px; line-height: 1.35; }
+.tile p { font-size: 12.5px; color: var(--fg-2); line-height: 1.68; }
+
+/* ── VULN + CONTACT ───────────────────────────────────────── */
+.vuln-contact-wrap {
+  max-width: 1120px; margin: 0 auto; padding: 0 40px;
+}
+.vuln-section { padding: 40px 0 48px; scroll-margin-top: 96px; }
+.vuln-section h2 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 14px; }
+.vuln-section p { font-size: 13.5px; color: var(--fg-2); line-height: 1.75; max-width: 600px; margin-bottom: 10px; }
+.link-accent { color: var(--accent); font-weight: 500; text-decoration: none; }
+.link-accent:hover { text-decoration: underline; text-underline-offset: 3px; }
+.contact-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px 32px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; margin-bottom: 48px;
+}
+.contact-card-text h3 { font-size: 16px; font-weight: 500; margin-bottom: 5px; }
+.contact-card-text p { font-size: 13.5px; color: var(--fg-2); line-height: 1.6; max-width: 460px; }
+.contact-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 14px; font-weight: 400; color: #fff; background: var(--color-off-black);
+  padding: 10px 20px; border-radius: 100px; text-decoration: none;
+  white-space: nowrap; flex-shrink: 0; transition: background 0.15s;
+  font-family: var(--font-display);
+}
+.contact-btn:hover { background: var(--color-applied-blue); }
+.contact-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border); padding: 22px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy, .footer-tagline { font-size: 12px; color: var(--fg-3); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--fg-3); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--fg); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .page-body { grid-template-columns: 1fr; }
+  .toc-sidebar { display: none; }
+}
+@media (max-width: 600px) {
+  .tiles-grid { grid-template-columns: 1fr; }
+  .tile:nth-child(even) { padding-left: 0; border-left: none; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav"></nav>
+
+<main>
+  <!-- HERO: full-width -->
+  <div class="page-hero">
+    <section class="hero" id="hero"></section>
+  </div>
+  <div class="divider"></div>
+
+  <!-- BODY: TOC sidebar + sections -->
+  <div class="page-body">
+    <aside class="toc-sidebar" id="toc"></aside>
+    <div class="sections-container" id="sections-container"></div>
+  </div>
+</main>
+
+<!-- Vuln disclosure + contact + footer: full-width within max-width -->
+<div class="divider"></div>
+<div class="vuln-contact-wrap">
+  <section class="vuln-section" id="vuln"></section>
+  <div id="contact"></div>
+</div>
+<footer class="footer" id="footer"></footer>
+
+<script>
+/* ── Escape helper ──────────────────────────────────────────── */
+function esc(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── NAV ────────────────────────────────────────────────────── */
+document.getElementById('nav').innerHTML = `
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AI</div>
+    ${esc(CONFIG.nav.logo)}
+  </a>
+  <ul class="nav-links">
+    ${CONFIG.nav.links.map(l => `<li><a href="#">${esc(l)}</a></li>`).join('')}
+  </ul>
+  <div class="nav-end">
+    <a href="${CONFIG.nav.cta.href}" class="nav-btn-primary">${esc(CONFIG.nav.cta.label)}</a>
+  </div>
+`;
+
+/* ── HERO ───────────────────────────────────────────────────── */
+document.getElementById('hero').innerHTML = `
+  <div class="hero-eyebrow"><span class="hero-eyebrow-bar"></span>${esc(CONFIG.hero.eyebrow)}</div>
+  <h1>${esc(CONFIG.hero.heading)}</h1>
+  <p>${esc(CONFIG.hero.body)}</p>
+  <div class="hero-meta">Last updated ${esc(CONFIG.hero.lastUpdated)}</div>
+`;
+
+/* ── TOC ────────────────────────────────────────────────────── */
+document.getElementById('toc').innerHTML = `
+  <div class="toc-label">On this page</div>
+  <ul class="toc-list">
+    ${CONFIG.toc.map((item, i) => `
+      <li class="toc-item" id="toc-item-${item.id}">
+        <a class="toc-link" href="#${item.id}" data-target="${item.id}">
+          <span class="toc-link-num">${String(i + 1).padStart(2, '0')}</span>
+          <span class="toc-link-label">${esc(item.label)}</span>
+          <span class="toc-link-sub">${esc(item.sub)}</span>
+        </a>
+      </li>
+    `).join('')}
+  </ul>
+`;
+
+/* ── SECTIONS ───────────────────────────────────────────────── */
+function renderBadge(b) {
+  return `
+    <div class="badge-item">
+      <div class="badge-frame">
+        ${b.img
+          ? `<img src="${b.img}" alt="${esc(b.label)}">`
+          : `<svg viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">${b.svg}</svg>`
+        }
+      </div>
+      <div class="badge-label">${esc(b.label)}</div>
+      <div class="badge-sub">${esc(b.sub)}</div>
+    </div>
+  `;
+}
+
+function renderTile(t) {
+  return `
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24">${t.icon}</svg></div>
+      <div class="tile-body">
+        <h3>${esc(t.title)}</h3>
+        <p>${esc(t.body)}</p>
+      </div>
+    </div>
+  `;
+}
+
+const TISAX_SVG = `
+  <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+    <rect width="140" height="80" rx="7" fill="#003B73"/>
+    <rect x="0.75" y="0.75" width="138.5" height="78.5" rx="6.5" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    <text x="70" y="30" font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="21" fill="white" text-anchor="middle" font-weight="800" letter-spacing="4">TISAX</text>
+    <line x1="18" y1="38" x2="122" y2="38" stroke="rgba(255,255,255,0.1)" stroke-width="0.75"/>
+    <rect x="21" y="44" width="44" height="20" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <text x="43" y="58" font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="700" letter-spacing="0.5">AL2</text>
+    <rect x="75" y="44" width="44" height="20" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <text x="97" y="58" font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="700" letter-spacing="0.5">AL3</text>
+    <text x="70" y="74" font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="2">ENX ASSOCIATION</text>
+  </svg>
+`;
+
+function renderCertCard(c) {
+  const mark = c.tisaxText
+    ? `<div class="cert-mark cert-mark-text">
+        <span class="cert-mark-wordmark">TISAX</span>
+        <span class="cert-mark-levels"><span>AL2</span><span>AL3</span></span>
+      </div>`
+    : `<div class="cert-mark"><img src="${c.img}" alt="${esc(c.name)}"></div>`;
+  const action = c.action
+    ? `<a href="${c.action.href}" target="_blank" rel="noopener" class="cert-action">
+        ${esc(c.action.label)}
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>`
+    : '';
+  return `
+    <div class="cert-card">
+      ${mark}
+      <div class="cert-divider"></div>
+      <div class="cert-name">${esc(c.name)}</div>
+      <div class="cert-issuer">${esc(c.issuer)}</div>
+      <div class="cert-scope">${esc(c.scope)}</div>
+      <div class="cert-detail">${esc(c.detail)}</div>
+      ${action}
+    </div>
+  `;
+}
+
+document.getElementById('sections-container').innerHTML = CONFIG.sections.map((s, i) => {
+  return `
+    <section class="content-section" id="${s.id}">
+      <div class="section-header">
+        <span class="section-num">${String(i + 1).padStart(2, '0')}</span>
+        <h2 class="section-title">${esc(s.label)}</h2>
+        <p class="section-tagline">${esc(s.tagline)}</p>
+        <p class="section-body">${esc(s.body)}</p>
+      </div>
+      ${s.certs ? `<div class="cert-grid">${s.certs.map(renderCertCard).join('')}</div>` : ''}
+      ${s.tiles && s.tiles.length ? `<div class="tiles-grid">${s.tiles.map(renderTile).join('')}</div>` : ''}
+    </section>
+  `;
+}).join('');
+
+/* ── VULN DISCLOSURE ────────────────────────────────────────── */
+const { vulnDisclosure: V, contact: K } = CONFIG;
+document.getElementById('vuln').innerHTML = `
+  <h2>${esc(V.heading)}</h2>
+  ${V.paragraphs.map(p => `<p>${p}</p>`).join('')}
+`;
+
+document.getElementById('contact').innerHTML = `
+  <div class="contact-card">
+    <div class="contact-card-text">
+      <h3>${esc(K.heading)}</h3>
+      <p>${esc(K.body)}</p>
+    </div>
+    <a href="mailto:${esc(K.email)}" class="contact-btn">
+      ${esc(K.email)}
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+`;
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+document.getElementById('footer').innerHTML = `
+  <div class="footer-copy">${esc(CONFIG.footer.copy)}</div>
+  <div class="footer-links">
+    ${CONFIG.footer.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')}
+  </div>
+  <div class="footer-tagline">${esc(CONFIG.footer.tagline)}</div>
+`;
+
+/* ── TOC ACTIVE STATE (IntersectionObserver) ────────────────── */
+const tocItems = document.querySelectorAll('.toc-item');
+const sections = [
+  ...document.querySelectorAll('.content-section'),
+  document.getElementById('vuln'),
+].filter(Boolean);
+
+const observerOptions = {
+  root: null,
+  rootMargin: '-96px 0px -55% 0px',
+  threshold: 0,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tocItems.forEach(item => item.classList.remove('active'));
+      const activeItem = document.getElementById('toc-item-' + id);
+      if (activeItem) activeItem.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+sections.forEach(s => observer.observe(s));
+
+/* ── SMOOTH SCROLL for TOC links ────────────────────────────── */
+document.querySelectorAll('.toc-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
